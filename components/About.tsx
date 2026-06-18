@@ -117,11 +117,11 @@ export default function About() {
             and American Express.
           </motion.p>
           <motion.p {...reveal}>
-            That made me want to own the product, not just study it. I built a
-            couple of startups through incubator programs, then joined{" "}
-            <L href="#">Zelig</L> as a UX researcher with a product-design lens,
-            turning research into product strategy with the C-suite and pitching
-            investors. The team{" "}
+            I wanted to own a product and learn end-to-end shipping, so I built
+            a couple of startups that got into incubator programs and joined{" "}
+            <L href="#">Zelig</L> as a product designer. I ran research to guide
+            product decisions and strategy, and pitched our positioning to
+            investors as the company{" "}
             <L href="#">raised a $15M Series A at a $100M valuation</L>.
           </motion.p>
           <motion.p {...reveal}>
@@ -136,18 +136,21 @@ export default function About() {
             Now I lead my capstone with{" "}
             <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L> and
             contribute to the <L href="https://uiforai.design">UI for AI</L>{" "}
-            initiative, writing papers on mapping the innovation landscape and
-            augmenting designer workflows. I also teach grad students to put AI
-            to work inside their own design process.
+            initiative. Augmenting the design process is the thread I keep
+            pulling on: I TA&apos;d a graduate course on it, and I&apos;m
+            working toward several papers, including ones on mapping the
+            innovation landscape and augmenting designer workflows.
           </motion.p>
           <motion.p
             {...reveal}
             className="text-ink border-t border-white/[0.06] pt-5 mt-1"
           >
-            Looking to the future, I am excited to make AI a genuine teammate in
-            design: something that lives inside the tools people already use,
-            takes on the work designers dread, and changes what an interface is
-            once it runs underneath.
+            Looking to the future, I&apos;m excited to help design the next
+            paradigm for human-AI systems, starting from big ideas and getting
+            there through fast, iterative building. I do my best work with more
+            prototyping, more strategy, and more high-level problem solving,
+            pushing far-out ideas into real products by building and testing
+            quickly until they take a shape no one expected.
           </motion.p>
         </div>
 

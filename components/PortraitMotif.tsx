@@ -1,14 +1,21 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 
-// Profile-photo placeholder: a friendly morphing blob (the site's wavy-blue
-// charm) with a little face. Swap for a real photo when ready.
+// Profile-photo placeholder: a friendly morphing blob with a little face, set
+// in a small constellation. The site's wavy-blue charm, made personable.
 const N = 56;
 const CX = 120;
 const CY = 148;
 const R = 72;
+const STARS: [number, number][] = [
+  [58, 52],
+  [186, 58],
+  [120, 30],
+  [44, 252],
+  [198, 246],
+];
 
 function pathFrom(pts: [number, number][]) {
   const n = pts.length;
@@ -67,6 +74,26 @@ export default function PortraitMotif() {
         className="h-full w-full"
         style={{ filter: "drop-shadow(0 0 16px rgba(91,157,255,0.4))" }}
       >
+        {STARS.map(([x, y], i) =>
+          reduce ? (
+            <circle key={i} cx={x} cy={y} r="1.8" fill="#5B9DFF" fillOpacity="0.5" />
+          ) : (
+            <motion.circle
+              key={i}
+              cx={x}
+              cy={y}
+              r="1.8"
+              fill="#5B9DFF"
+              animate={{ opacity: [0.3, 0.9, 0.3] }}
+              transition={{
+                duration: 3 + (i % 3),
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: i * 0.5,
+              }}
+            />
+          ),
+        )}
         <path ref={ref} fill="#5B9DFF" />
         <g fill="#0B0B0D">
           <circle cx="104" cy="140" r="5.5" />

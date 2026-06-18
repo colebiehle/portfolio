@@ -85,7 +85,13 @@ export default function QRShare({ url }: { url: string }) {
                   size={164}
                   bgColor="#ffffff"
                   fgColor="#0B0B0D"
-                  level="M"
+                  level="H"
+                  imageSettings={{
+                    src: "/blob-star.svg",
+                    height: 34,
+                    width: 34,
+                    excavate: true,
+                  }}
                 />
               </div>
               <p className="mt-4 text-sm text-ink/80">
