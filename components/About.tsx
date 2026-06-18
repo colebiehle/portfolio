@@ -107,49 +107,47 @@ export default function About() {
         <div className="space-y-5 text-base md:text-lg leading-relaxed text-ink/80">
           <motion.p {...reveal}>
             I started in design and computer science at UC San Diego, where I
-            also fell into research and began{" "}
+            worked in a research lab and began{" "}
             <L href="#">
               publishing on human-AI collaboration and collective intelligence
             </L>
-            . I wanted to see how design held up across very different problems,
-            so I joined the research agency Mindswarms and ran studies for
-            clients including Google, Amazon, Microsoft, Nike, and American
-            Express.
+            . I wanted to know how design holds up against problems I
+            couldn&apos;t predict, so I went to the research agency Mindswarms
+            and ran studies for clients like Google, Amazon, Microsoft, Nike,
+            and American Express.
           </motion.p>
           <motion.p {...reveal}>
-            That work made me want to own the product, not just study it. I
-            built a couple of startups through incubator programs, and at{" "}
-            <L href="#">Zelig</L> I worked as a UX researcher with a
-            product-design lens, turning research into product strategy
-            alongside the C-suite and pitching investors. The team went on to{" "}
-            <L href="#">raise a $15M Series A at a $100M valuation</L>.
+            That made me want to own the product, not just study it. I built a
+            couple of startups through incubator programs, then joined{" "}
+            <L href="#">Zelig</L> as a UX researcher with a product-design lens,
+            turning research into product strategy with the C-suite and pitching
+            investors. The team{" "}
+            <L href="#">raised a $15M Series A at a $100M valuation</L>.
           </motion.p>
           <motion.p {...reveal}>
-            To go deeper on research, and to sharpen my ability to not just
-            design but build, I came to Carnegie Mellon for a Master&apos;s in
-            HCI. The work from my lab turned out to have real commercial legs,
-            so we pitched it at CMU&apos;s most competitive startup competition
-            and won <L href="#">first place and $150k</L>. It has since picked
-            up more awards, a place in the VentureBridge incubator, and NSF
-            backing.
+            I came to Carnegie Mellon for a Master&apos;s in HCI to go deeper on
+            research and get sharper at building what I design. The work from my
+            lab showed real commercial potential, so we pitched it at
+            CMU&apos;s most competitive startup competition and won{" "}
+            <L href="#">first place and $150k</L>. It has since picked up more
+            awards, a spot in the VentureBridge incubator, and NSF backing.
           </motion.p>
           <motion.p {...reveal}>
-            These days I lead my capstone with{" "}
-            <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L>,
+            Now I lead my capstone with{" "}
+            <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L> and
             contribute to the <L href="https://uiforai.design">UI for AI</L>{" "}
-            initiative, and write papers on things like mapping the innovation
-            landscape and augmenting designer workflows. I&apos;ve also taught
-            grad students to augment their own design process.
+            initiative, writing papers on mapping the innovation landscape and
+            augmenting designer workflows. I also teach grad students to put AI
+            to work inside their own design process.
           </motion.p>
           <motion.p
             {...reveal}
             className="text-ink border-t border-white/[0.06] pt-5 mt-1"
           >
-            What I&apos;m most excited to work on next is making AI a genuine
-            teammate in the design process: something that lives inside the
-            tools people already use, does the quiet heavy lifting, and reshapes
-            what an interface even is once it sits underneath. That is the
-            direction I care about most.
+            Looking to the future, I am excited to make AI a genuine teammate in
+            design: something that lives inside the tools people already use,
+            takes on the work designers dread, and changes what an interface is
+            once it runs underneath.
           </motion.p>
         </div>
 
