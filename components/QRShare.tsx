@@ -5,8 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { QRCodeSVG } from "qrcode.react";
 import { EASE, DUR } from "@/lib/motion";
 
-// A "Share" button that pops a scannable QR to the site — handy for handing
-// the desktop view off to a phone, or re-sharing from one.
+// A "Share" button that pops a scannable QR to the site, styled like the rest
+// (mono label, surface card, subtle close).
 export default function QRShare({ url }: { url: string }) {
   const [open, setOpen] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
@@ -70,32 +70,32 @@ export default function QRShare({ url }: { url: string }) {
               role="dialog"
               aria-modal="true"
               aria-label="Share this site"
-              initial={{ opacity: 0, scale: 0.96, y: 8 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.98 }}
+              initial={{ scale: 0.96, y: 8 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.98 }}
               transition={{ duration: DUR.base, ease: EASE }}
               className="relative z-10 rounded-2xl bg-surface border border-white/10 p-6 text-center shadow-2xl"
             >
-              <div className="inline-block rounded-xl bg-white p-4">
+              <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mb-4">
+                Scan to open on your phone
+              </p>
+              <div className="inline-block rounded-xl bg-white p-3.5">
                 <QRCodeSVG
                   value={url}
-                  size={176}
+                  size={164}
                   bgColor="#ffffff"
                   fgColor="#0B0B0D"
                   level="M"
                 />
               </div>
-              <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                Scan to open on your phone
-              </p>
-              <p className="mt-1 text-sm text-ink/80">
+              <p className="mt-4 text-sm text-ink/80">
                 {url.replace(/^https?:\/\//, "")}
               </p>
               <button
                 ref={closeRef}
                 type="button"
                 onClick={() => setOpen(false)}
-                className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 rounded bg-white/10 hover:bg-white/20 transition-colors text-ink"
+                className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted hover:text-ink transition-colors"
               >
                 Close
               </button>

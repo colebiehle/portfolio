@@ -3,8 +3,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import PortraitMotif from "@/components/PortraitMotif";
 
-// Inline links are how the achievements live in the prose. Replace placeholder
-// hrefs (#) with real URLs (Scholar, Zelig, funding announcement, McGinnis, 99P).
+// Inline links carry the proof. External ones open in a new tab. Replace the
+// "#" placeholders (Scholar, Zelig, funding announcement, McGinnis) as URLs land.
 function L({ href, children }: { href: string; children: React.ReactNode }) {
   const external = /^https?:/i.test(href);
   return (
@@ -63,13 +63,7 @@ const OFFCLOCK: { v: string; icon: React.ReactNode }[] = [
     icon: (
       <>
         <circle cx="12" cy="12" r="4.5" />
-        <ellipse
-          cx="12"
-          cy="12"
-          rx="10"
-          ry="3.5"
-          transform="rotate(-22 12 12)"
-        />
+        <ellipse cx="12" cy="12" rx="10" ry="3.5" transform="rotate(-22 12 12)" />
       </>
     ),
   },
@@ -110,55 +104,55 @@ export default function About() {
       </motion.h2>
 
       <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,52rem)_minmax(300px,340px)] lg:items-start">
-        {/* Narrative — fixed readable measure; photo sits right beside it */}
         <div className="space-y-5 text-base md:text-lg leading-relaxed text-ink/80">
           <motion.p {...reveal}>
-            I studied design and computer science at UC San Diego, got into
-            research along the way, and{" "}
+            I started in design and computer science at UC San Diego, where I
+            also fell into research and began{" "}
             <L href="#">
-              published on human-AI collaboration and collective intelligence
+              publishing on human-AI collaboration and collective intelligence
             </L>
-            . I wanted range next, so I joined the research agency Mindswarms
-            and ran studies for clients like Google, Amazon, and Nike.
+            . I wanted to see how design held up across very different problems,
+            so I joined the research agency Mindswarms and ran studies for
+            clients including Google, Amazon, Microsoft, Nike, and American
+            Express.
           </motion.p>
           <motion.p {...reveal}>
-            Then I wanted to shape products, not just study them. I built a
-            couple of startups through incubator programs, and at{" "}
+            That work made me want to own the product, not just study it. I
+            built a couple of startups through incubator programs, and at{" "}
             <L href="#">Zelig</L> I worked as a UX researcher with a
-            product-design lens, turning research into product strategy with the
-            C-suite and pitching investors. The team{" "}
-            <L href="#">secured a $15M Series A at a $100M valuation</L>.
+            product-design lens, turning research into product strategy
+            alongside the C-suite and pitching investors. The team went on to{" "}
+            <L href="#">raise a $15M Series A at a $100M valuation</L>.
           </motion.p>
           <motion.p {...reveal}>
-            I came to CMU&apos;s HCI program to keep doing groundbreaking
-            research and to sharpen my ability to not just design but build.
-            Research from my lab showed real commercial potential, so we pitched
-            it at CMU&apos;s most competitive startup competition and won{" "}
-            <L href="#">first place and $150k</L>. It has since earned more
-            awards, a spot in the VentureBridge incubator, and NSF backing.
+            To go deeper on research, and to sharpen my ability to not just
+            design but build, I came to Carnegie Mellon for a Master&apos;s in
+            HCI. The work from my lab turned out to have real commercial legs,
+            so we pitched it at CMU&apos;s most competitive startup competition
+            and won <L href="#">first place and $150k</L>. It has since picked
+            up more awards, a place in the VentureBridge incubator, and NSF
+            backing.
           </motion.p>
           <motion.p {...reveal}>
-            Now I lead my capstone with{" "}
-            <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L> and
-            contribute to <L href="https://uiforai.design">UI for AI</L>, an
-            initiative
-            reimagining how people work with generative systems. I&apos;m
-            writing several papers, including mapping the innovation landscape
-            and augmenting designer workflows, and I&apos;ve taught grad
-            students to augment their own design process.
+            These days I lead my capstone with{" "}
+            <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L>,
+            contribute to the <L href="https://uiforai.design">UI for AI</L>{" "}
+            initiative, and write papers on things like mapping the innovation
+            landscape and augmenting designer workflows. I&apos;ve also taught
+            grad students to augment their own design process.
           </motion.p>
           <motion.p
             {...reveal}
             className="text-ink border-t border-white/[0.06] pt-5 mt-1"
           >
-            These days I&apos;m most interested in a few questions: how AI can
-            be a real teammate in design work, how it should sit inside the
-            tools people already use, and what an interface becomes once AI is
-            underneath it. That is what I am building and learning toward now.
+            What I&apos;m most excited to work on next is making AI a genuine
+            teammate in the design process: something that lives inside the
+            tools people already use, does the quiet heavy lifting, and reshapes
+            what an interface even is once it sits underneath. That is the
+            direction I care about most.
           </motion.p>
         </div>
 
-        {/* Face + a little personality */}
         <aside className="space-y-7">
           <motion.div
             {...reveal}
