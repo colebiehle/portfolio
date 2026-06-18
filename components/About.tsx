@@ -6,9 +6,11 @@ import PortraitMotif from "@/components/PortraitMotif";
 // Inline links are how the achievements live in the prose. Replace placeholder
 // hrefs (#) with real URLs (Scholar, Zelig, funding announcement, McGinnis, 99P).
 function L({ href, children }: { href: string; children: React.ReactNode }) {
+  const external = /^https?:/i.test(href);
   return (
     <a
       href={href}
+      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       className="text-accent underline decoration-accent/30 underline-offset-[3px] decoration-1 hover:decoration-accent transition-colors"
     >
       {children}
@@ -136,8 +138,10 @@ export default function About() {
             awards, a spot in the VentureBridge incubator, and NSF backing.
           </motion.p>
           <motion.p {...reveal}>
-            Now I lead my capstone with <L href="#">Honda&apos;s 99P Labs</L>{" "}
-            and contribute to <L href="#work">UI for AI</L>, an initiative
+            Now I lead my capstone with{" "}
+            <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L> and
+            contribute to <L href="https://uiforai.design">UI for AI</L>, an
+            initiative
             reimagining how people work with generative systems. I&apos;m
             writing several papers, including mapping the innovation landscape
             and augmenting designer workflows, and I&apos;ve taught grad
@@ -147,10 +151,10 @@ export default function About() {
             {...reveal}
             className="text-ink border-t border-white/[0.06] pt-5 mt-1"
           >
-            What pulls me forward is the moment a rough idea becomes something
-            people genuinely feel. I want to keep chasing that: AI doing the
-            quiet work underneath, and design on top that fits someone so well
-            they feel seen.
+            These days I&apos;m most interested in a few questions: how AI can
+            be a real teammate in design work, how it should sit inside the
+            tools people already use, and what an interface becomes once AI is
+            underneath it. That is what I am building and learning toward now.
           </motion.p>
         </div>
 

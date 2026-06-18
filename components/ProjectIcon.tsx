@@ -40,6 +40,20 @@ function Glyph({ id }: { id: string }) {
           <path d="M14 7l3 3" />
         </>
       );
+    case "ideation-cues": // conversation / cues
+      return (
+        <>
+          <path d="M4 7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-7l-4 3v-3H6a2 2 0 0 1-2-2z" />
+          <path d="M8 10h.01M11.5 10h.01M15 10h.01" />
+        </>
+      );
+    case "information-seeking": // search / sense-making
+      return (
+        <>
+          <circle cx="10.5" cy="10.5" r="6" />
+          <path d="m20 20-5.2-5.2" />
+        </>
+      );
     default:
       return <circle cx="12" cy="12" r="3" />;
   }
