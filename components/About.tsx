@@ -145,12 +145,9 @@ export default function About() {
             {...reveal}
             className="text-ink border-t border-white/[0.06] pt-5 mt-1"
           >
-            Looking to the future, I&apos;m excited to help design the next
-            paradigm for human-AI systems, starting from big ideas and getting
-            there through fast, iterative building. I do my best work with more
-            prototyping, more strategy, and more high-level problem solving,
-            pushing far-out ideas into real products by building and testing
-            quickly until they take a shape no one expected.
+            Looking ahead, I want to design the next paradigm for human-AI
+            systems, turning big, ambitious ideas into real products by building
+            and testing fast.
           </motion.p>
         </div>
 
