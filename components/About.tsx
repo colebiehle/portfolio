@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import ProjectMotif from "@/components/ProjectMotif";
+import PortraitMotif from "@/components/PortraitMotif";
 
 // Inline links are how the achievements live in the prose. Replace placeholder
 // hrefs (#) with real URLs (Scholar, Zelig, funding announcement, McGinnis, 99P).
@@ -147,11 +147,10 @@ export default function About() {
             {...reveal}
             className="text-ink border-t border-white/[0.06] pt-5 mt-1"
           >
-            Next, I want a fast, blue-skies environment where I can build and
-            test ideas quickly, then turn the ones that hold up into refined,
-            beautiful work that resonates so specifically with the people it is
-            for that they feel seen. The problems I keep returning to live where
-            AI meets the tools people already use.
+            What pulls me forward is the moment a rough idea becomes something
+            people genuinely feel. I want to keep chasing that: AI doing the
+            quiet work underneath, and design on top that fits someone so well
+            they feel seen.
           </motion.p>
         </div>
 
@@ -162,7 +161,7 @@ export default function About() {
             className="relative aspect-[4/5] max-w-[320px] lg:max-w-none rounded-2xl border border-white/10 bg-surface overflow-hidden"
           >
             {/* Placeholder motif until a real photo is dropped in */}
-            <ProjectMotif id="cole-biehle" accent="#5B9DFF" active />
+            <PortraitMotif />
           </motion.div>
           <motion.div {...reveal} className="max-w-[320px] lg:max-w-none">
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mb-3">

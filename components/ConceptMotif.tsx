@@ -21,14 +21,18 @@ const RIGHT: [number, number][] = [
   [244, 104],
 ];
 
-// Analogical Engines: an idea leaping between two distant domains.
+// Analogical Engines: an idea leaping between two distant domains, with a
+// burst where it lands.
 function Analogical({ accent, active }: { accent: string; active?: boolean }) {
   const reduce = useReducedMotion();
   const beam = useRef<SVGPathElement>(null);
   const dot = useRef<SVGCircleElement>(null);
+  const burst = useRef<SVGCircleElement>(null);
 
   useEffect(() => {
-    const frame = (p: number, j: number) => {
+    const frame = (e: number) => {
+      const j = Math.floor(e);
+      const p = e - j;
       const a = LEFT[j % LEFT.length];
       const b = RIGHT[(j * 2 + 1) % RIGHT.length];
       const cx = (a[0] + b[0]) / 2;
@@ -39,18 +43,22 @@ function Analogical({ accent, active }: { accent: string; active?: boolean }) {
       const my = (1 - p) * (1 - p) * a[1] + 2 * (1 - p) * p * cy + p * p * b[1];
       dot.current?.setAttribute("cx", mx.toFixed(1));
       dot.current?.setAttribute("cy", my.toFixed(1));
+      // burst when the idea arrives
+      const tp = p > 0.76 ? (p - 0.76) / 0.24 : 0;
+      burst.current?.setAttribute("cx", b[0].toFixed(1));
+      burst.current?.setAttribute("cy", b[1].toFixed(1));
+      burst.current?.setAttribute("r", (3 + tp * 13).toFixed(1));
+      burst.current?.setAttribute("opacity", (tp > 0 ? (1 - tp) * 0.7 : 0).toFixed(2));
     };
     if (reduce) {
-      frame(1, 0);
+      frame(0.5);
       return;
     }
     let raf = 0;
     let start: number | null = null;
     const loop = (ts: number) => {
       if (start === null) start = ts;
-      const e = (ts - start) / 1700;
-      const j = Math.floor(e);
-      frame(e - j, j);
+      frame((ts - start) / 1700);
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
@@ -83,6 +91,7 @@ function Analogical({ accent, active }: { accent: string; active?: boolean }) {
             <circle key={i} cx={n[0]} cy={n[1]} r="2.6" />
           ))}
         </g>
+        <circle ref={burst} fill="none" stroke={accent} strokeWidth="1.2" opacity="0" />
         <path
           ref={beam}
           fill="none"
@@ -94,9 +103,9 @@ function Analogical({ accent, active }: { accent: string; active?: boolean }) {
         />
         <circle
           ref={dot}
-          r="3.2"
+          r="3.4"
           fill={accent}
-          style={{ filter: `drop-shadow(0 0 4px ${accent})` }}
+          style={{ filter: `drop-shadow(0 0 5px ${accent})` }}
         />
       </svg>
     </div>
@@ -104,10 +113,11 @@ function Analogical({ accent, active }: { accent: string; active?: boolean }) {
 }
 
 // UI for AI: an interface whose AI element keeps finding new places to live,
-// exploring how AI could integrate into the screen.
+// with a scan sweeping the screen.
 function UiForAi({ accent, active }: { accent: string; active?: boolean }) {
   const reduce = useReducedMotion();
   const block = useRef<SVGRectElement>(null);
+  const scan = useRef<SVGLineElement>(null);
   const slots: [number, number, number][] = [
     [64, 56, 92],
     [64, 96, 150],
@@ -127,10 +137,10 @@ function UiForAi({ accent, active }: { accent: string; active?: boolean }) {
       const b = slots[j];
       block.current?.setAttribute("x", (a[0] + (b[0] - a[0]) * t).toFixed(1));
       block.current?.setAttribute("y", (a[1] + (b[1] - a[1]) * t).toFixed(1));
-      block.current?.setAttribute(
-        "width",
-        (a[2] + (b[2] - a[2]) * t).toFixed(1),
-      );
+      block.current?.setAttribute("width", (a[2] + (b[2] - a[2]) * t).toFixed(1));
+      const sx = 52 + (((e * 0.6) % 1) + 1) % 1 * 216;
+      scan.current?.setAttribute("x1", sx.toFixed(1));
+      scan.current?.setAttribute("x2", sx.toFixed(1));
     };
     if (reduce) {
       frame(0);
@@ -145,7 +155,6 @@ function UiForAi({ accent, active }: { accent: string; active?: boolean }) {
     };
     raf = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(raf);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reduce]);
 
   const rows = [56, 76, 96, 116, 136];
@@ -177,6 +186,18 @@ function UiForAi({ accent, active }: { accent: string; active?: boolean }) {
           strokeOpacity={active ? 0.4 : 0.28}
           strokeWidth="1"
         />
+        {!reduce && (
+          <line
+            ref={scan}
+            x1="52"
+            y1="34"
+            x2="52"
+            y2="166"
+            stroke={accent}
+            strokeOpacity="0.18"
+            strokeWidth="1"
+          />
+        )}
         <g fill={accent} fillOpacity="0.1">
           {rows.map((y, i) => (
             <rect key={i} x="64" y={y} width={i % 2 ? 150 : 110} height="10" rx="3" />
