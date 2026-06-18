@@ -6,6 +6,11 @@ import PortraitMotif from "@/components/PortraitMotif";
 // Inline links carry the proof. External ones open in a new tab. Replace the
 // "#" placeholders (Scholar, Zelig, funding announcement, McGinnis) as URLs land.
 function L({ href, children }: { href: string; children: React.ReactNode }) {
+  // Placeholder highlights ("#") render as accent text, not links, until real
+  // URLs are added. Real URLs render as external links.
+  if (href === "#") {
+    return <span className="text-accent">{children}</span>;
+  }
   const external = /^https?:/i.test(href);
   return (
     <a
