@@ -122,7 +122,10 @@ export default function About() {
               .
             </motion.p>
             <motion.p {...reveal}>
-              Now I design and build{" "}
+              I&apos;m currently pursuing a Master&apos;s in Human-Computer
+              Interaction at Carnegie Mellon&apos;s{" "}
+              <L href="https://www.cs.cmu.edu">School of Computer Science</L>, where
+              I build{" "}
               <L href="https://www.analogicalengines.com">Analogical Engines</L>, an
               AI tool for R&amp;D teams that won{" "}
               <L href="https://technical.ly/entrepreneurship/analogical-wins-cmu-mcginnis-startup-competition/">
