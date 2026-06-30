@@ -6,6 +6,7 @@ import { tiles } from "@/lib/tiles";
 import ProjectCard from "@/components/ProjectCard";
 import ProjectRow from "@/components/ProjectRow";
 import Detail from "@/components/Detail";
+import { statusColor } from "@/components/StatusDot";
 import { EASE, DUR } from "@/lib/motion";
 
 export default function Bento() {
@@ -90,7 +91,11 @@ export default function Bento() {
         <ul className="divide-y divide-white/[0.06]">
           {rest.map((t) => (
             <li key={t.id}>
-              <ProjectRow tile={t} onOpen={() => setSelected(t.id)} />
+              <ProjectRow
+                tile={t}
+                reduce={!!reduce}
+                onOpen={() => setSelected(t.id)}
+              />
             </li>
           ))}
         </ul>
@@ -103,11 +108,16 @@ export default function Bento() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: DUR.base, ease: EASE }}
+            transition={{ duration: DUR.fast, ease: EASE }}
           >
             <div
-              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-black/85 backdrop-blur-sm"
               onClick={close}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[min(56rem,88vw)] h-[64vh] rounded-full blur-[130px] opacity-25 transition-colors duration-500"
+              style={{ backgroundColor: active.accent ?? statusColor(active.status) }}
             />
             <motion.div
               ref={dialogRef}

@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import ConceptMotif from "@/components/ConceptMotif";
+import Wireframe from "@/components/Wireframe";
 import type { Tile } from "@/lib/tiles";
 
 // The reveal "surface": real media if present, else the project's living
@@ -46,7 +46,12 @@ export default function WorkVisual({
         />
       )}
       {stage === "motif" && (
-        <ConceptMotif id={tile.id} accent={accent} active={active} />
+        <Wireframe id={tile.id} accent={accent} active={active} />
+      )}
+      {tile.comingSoon && (
+        <span className="absolute left-3 top-3 font-mono text-[9px] uppercase tracking-[0.16em] text-ink/70 px-2.5 py-1 rounded-full bg-bg/55 backdrop-blur border border-white/10">
+          Case study coming soon
+        </span>
       )}
     </div>
   );

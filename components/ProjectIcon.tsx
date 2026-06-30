@@ -19,6 +19,27 @@ function Glyph({ id }: { id: string }) {
           <path d="M5 13.5h14" />
         </>
       );
+    case "bumble": // honeycomb / connection
+      return (
+        <>
+          <path d="M12 3.5l6.5 3.75v7.5L12 18.5 5.5 14.75v-7.5z" />
+          <circle cx="12" cy="11" r="2.6" />
+        </>
+      );
+    case "spotify": // steerable sound
+      return (
+        <>
+          <path d="M5 12a7 7 0 0 1 14 0" />
+          <path d="M8 13v3M12 11v5M16 13v3" />
+        </>
+      );
+    case "cozu": // captured knowledge
+      return (
+        <>
+          <path d="M12 3a6 6 0 0 0-3.4 10.9c.5.4.8 1 .9 1.6l.1.5h4.8l.1-.5c.1-.6.4-1.2.9-1.6A6 6 0 0 0 12 3Z" />
+          <path d="M10 20h4" />
+        </>
+      );
     case "zelig": // hanger
       return (
         <>

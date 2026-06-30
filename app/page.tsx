@@ -2,7 +2,6 @@ import Nav from "@/components/Nav";
 import SystemField from "@/components/SystemField";
 import Hero from "@/components/Hero";
 import Bento from "@/components/Bento";
-import FlowDivider from "@/components/FlowDivider";
 import About from "@/components/About";
 import CopyEmail from "@/components/CopyEmail";
 import QRShare from "@/components/QRShare";
@@ -17,6 +16,8 @@ export default function Page() {
         Skip to content
       </a>
       <SystemField />
+      <div className="ambient-glow" aria-hidden />
+
       <main id="top" className="relative z-10 min-h-screen">
       <Nav />
       <Hero />
@@ -28,8 +29,6 @@ export default function Page() {
         <h2 className="sr-only">Selected work</h2>
         <Bento />
       </section>
-
-      <FlowDivider />
 
       <About />
 
@@ -81,6 +80,8 @@ export default function Page() {
         </div>
         <a
           href="https://github.com/colebiehle"
+          target="_blank"
+          rel="noopener noreferrer"
           className="mt-8 inline-block font-mono text-[11px] text-muted hover:text-accent transition-colors"
         >
           {"// built in next.js · tailwind · framer motion · github ↗"}

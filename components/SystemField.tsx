@@ -88,9 +88,10 @@ export default function SystemField() {
         <path
           ref={ref}
           fill="none"
-          stroke="#5B9DFF"
+          stroke="var(--field-accent, #5B9DFF)"
           strokeWidth="0.7"
           strokeLinejoin="round"
+          style={{ transition: "stroke 0.7s ease" }}
         />
       </svg>
     </div>

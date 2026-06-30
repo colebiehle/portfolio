@@ -64,6 +64,29 @@ body::before {
   scrollbar-color: #2a2a30 transparent;
 }
 
+/* Ambient accent: the page subtly warms to the hovered project's color */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  background: radial-gradient(
+    1100px circle at 78% 30%,
+    color-mix(in srgb, var(--hover-accent, #5b9dff) 13%, transparent),
+    transparent 62%
+  );
+}
+html.accent-active .ambient-glow {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow {
+    transition: none;
+  }
+}
+
 /* Logo marquee */
 @keyframes marquee {
   from {

@@ -1,13 +1,11 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import PortraitMotif from "@/components/PortraitMotif";
+import Portrait from "@/components/Portrait";
 
-// Inline links carry the proof. External ones open in a new tab. Replace the
-// "#" placeholders (Scholar, Zelig, funding announcement, McGinnis) as URLs land.
+// Inline links carry the proof and open in a new tab. Any remaining "#" (e.g.
+// "more awards", with no standalone announcement) renders as accent text only.
 function L({ href, children }: { href: string; children: React.ReactNode }) {
-  // Placeholder highlights ("#") render as accent text, not links, until real
-  // URLs are added. Real URLs render as external links.
   if (href === "#") {
     return <span className="text-accent">{children}</span>;
   }
@@ -100,69 +98,54 @@ export default function About() {
       id="about"
       className="relative z-10 scroll-mt-16 mx-auto max-w-[1600px] px-6 md:px-10 py-24 md:py-28"
     >
-      <motion.h2
-        {...reveal}
-        className="font-display font-semibold tracking-tight text-3xl md:text-4xl leading-[1.18] max-w-3xl text-ink"
-      >
-        I research, code, and iterate fast to design the{" "}
-        <span className="text-accent">right solution</span>.
-      </motion.h2>
-
-      <div className="mt-14 grid gap-12 lg:grid-cols-[minmax(0,52rem)_minmax(300px,340px)] lg:items-start">
-        <div className="space-y-5 text-base md:text-lg leading-relaxed text-ink/80">
-          <motion.p {...reveal}>
-            I started in design and computer science at UC San Diego, where I
-            worked in a research lab and began{" "}
-            <L href="#">
-              publishing on human-AI collaboration and collective intelligence
-            </L>
-            . I wanted to know how design holds up against problems I
-            couldn&apos;t predict, so I went to the research agency Mindswarms
-            and ran studies for clients like Google, Amazon, Microsoft, Nike,
-            and American Express.
-          </motion.p>
-          <motion.p {...reveal}>
-            I wanted to own a product and learn end-to-end shipping, so I built
-            a couple of startups that got into incubator programs and joined{" "}
-            <L href="#">Zelig</L> as a product designer. I ran research to guide
-            product decisions and strategy, and pitched our positioning to
-            investors as the company{" "}
-            <L href="#">raised a $15M Series A at a $100M valuation</L>.
-          </motion.p>
-          <motion.p {...reveal}>
-            I came to Carnegie Mellon for a Master&apos;s in HCI to go deeper on
-            research and get sharper at building what I design. The work from my
-            lab showed real commercial potential, so we pitched it at
-            CMU&apos;s most competitive startup competition and won{" "}
-            <L href="#">first place and $150k</L>. It has since picked up more
-            awards, a spot in the VentureBridge incubator, and NSF backing.
-          </motion.p>
-          <motion.p {...reveal}>
-            Now I lead my capstone with{" "}
-            <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L> and
-            contribute to the <L href="https://uiforai.design">UI for AI</L>{" "}
-            initiative. Augmenting the design process is the thread I keep
-            pulling on: I TA&apos;d a graduate course on it, and I&apos;m
-            working toward several papers, including ones on mapping the
-            innovation landscape and augmenting designer workflows.
-          </motion.p>
-          <motion.p
+      <div className="grid gap-12 lg:gap-16 lg:grid-cols-[minmax(0,52rem)_minmax(300px,340px)] lg:items-start">
+        <div>
+          <motion.h2
             {...reveal}
-            className="text-ink border-t border-white/[0.06] pt-5 mt-1"
+            className="font-display font-semibold tracking-tight text-3xl md:text-4xl leading-[1.18] text-ink"
           >
-            Looking ahead, I want to design the next paradigm for human-AI
-            systems, turning big, ambitious ideas into real products by building
-            and testing fast.
-          </motion.p>
+            I research, code, and iterate fast to design products people{" "}
+            <span className="text-accent">can&rsquo;t live without</span>.
+          </motion.h2>
+
+          <div className="mt-10 space-y-5 text-base md:text-lg leading-relaxed text-ink/80">
+            <motion.p {...reveal}>
+              I&apos;m an interaction designer who builds what I design in code,
+              taking products end to end from research to working, tested
+              interfaces. I prototype quickly with AI, which lets me validate ideas
+              early and iterate on real interactions.
+            </motion.p>
+            <motion.p {...reveal}>
+              I&apos;ve run research for Google, Amazon, and Microsoft through the
+              agency Mindswarms, shaped product and strategy at{" "}
+              <L href="https://www.zelig.com">Zelig</L> through a{" "}
+              <L href="https://techcrunch.com/2023/11/06/luxury-clothing-virtual-try-on-100m-valuation-e-commerce/">
+                $15M Series A
+              </L>
+              , and now design and build Analogical Engines, an AI tool that breaks
+              R&amp;D teams out of fixation. I work across research, engineering,
+              and product, and I&apos;m at my best coordinating the moving parts of
+              a complex problem and keeping a team aligned on what matters most.
+            </motion.p>
+            <motion.p
+              {...reveal}
+              className="text-ink/80 border-t border-white/[0.06] pt-5 mt-1"
+            >
+              I think the hard part of AI has shifted from the model to the
+              interface: how people direct it, trust it, and stay in control as it
+              takes on more.{" "}
+              <span className="text-ink font-semibold">
+                What I want to build next is the interaction layer that turns
+                frontier models into products people actually understand and rely
+                on.
+              </span>
+            </motion.p>
+          </div>
         </div>
 
-        <aside className="space-y-7">
-          <motion.div
-            {...reveal}
-            className="relative aspect-[4/5] max-w-[320px] lg:max-w-none rounded-2xl border border-white/10 bg-surface overflow-hidden"
-          >
-            {/* Placeholder motif until a real photo is dropped in */}
-            <PortraitMotif />
+        <aside className="space-y-7 lg:pt-2">
+          <motion.div {...reveal}>
+            <Portrait />
           </motion.div>
           <motion.div {...reveal} className="max-w-[320px] lg:max-w-none">
             <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted mb-3">

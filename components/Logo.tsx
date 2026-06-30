@@ -36,7 +36,7 @@ export default function Logo({ className = "" }: { className?: string }) {
     >
       <svg
         viewBox="0 0 24 24"
-        className="h-[1.7em] w-[1.7em]"
+        className="h-[1.7em] w-[1.7em] motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:group-hover:rotate-[14deg] motion-safe:group-hover:scale-110"
         style={{ filter: "drop-shadow(0 0 5px rgba(91,157,255,0.45))" }}
       >
         <path d={BLOB_STAR} fill="#5B9DFF" />

@@ -22,7 +22,7 @@ export default function Hero() {
           className="mb-6 font-display text-2xl md:text-3xl text-ink"
         >
           <span className="font-semibold">Cole Biehle</span>
-          <span className="text-muted font-normal">, product designer</span>
+          <span className="text-muted font-normal">, interaction designer</span>
         </motion.p>
 
         <motion.h1

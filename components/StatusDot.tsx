@@ -5,6 +5,7 @@ export const STATUS: Record<string, { label: string; color: string; pulse?: bool
   shipped: { label: "shipped", color: "#5B9DFF" },
   research: { label: "research", color: "#D9A441" },
   building: { label: "in progress", color: "#D9A441" },
+  concept: { label: "concept", color: "#A78BFA" },
   submitted: { label: "in submission", color: "#8A8A93" },
   open: { label: "open to roles · aug 2026", color: "#3FB950", pulse: true },
 };
