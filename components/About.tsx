@@ -100,7 +100,7 @@ export default function About() {
             {...reveal}
             className="font-display font-semibold tracking-tight text-3xl md:text-4xl leading-[1.18] text-ink"
           >
-            I build AI products people{" "}
+            I research, design, and build AI products people{" "}
             <span className="text-accent">can&rsquo;t imagine working without</span>.
           </motion.h2>
 
@@ -113,9 +113,8 @@ export default function About() {
             <motion.p {...reveal}>
               I&apos;ve published research on human-AI collaboration in a UCSD{" "}
               <L href="https://designlab.ucsd.edu">research lab</L>, run studies for
-              Google,{" "}
-              <L href="https://en.wikipedia.org/wiki/Amazon_Halo">Amazon</L>, and
-              Microsoft through the agency Mindswarms, and shaped product and
+              Google, Amazon, and Microsoft through the agency Mindswarms, and
+              shaped product and
               strategy at <L href="https://www.zelig.com">Zelig</L> through a{" "}
               <L href="https://techcrunch.com/2023/11/06/luxury-clothing-virtual-try-on-100m-valuation-e-commerce/">
                 $15M Series A
@@ -138,9 +137,9 @@ export default function About() {
               {...reveal}
               className="text-ink border-t border-white/[0.06] pt-5 mt-1 font-semibold"
             >
-              My work is the next paradigm of human-AI interaction: turning frontier
-              models into interfaces people direct with confidence and never want to
-              give back.
+              Looking forward, I&apos;m excited for my work to shape the next
+              paradigm of human-AI interaction: turning frontier models into
+              interfaces people direct with confidence and never want to give back.
             </motion.p>
           </div>
         </div>

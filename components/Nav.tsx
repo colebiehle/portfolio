@@ -20,15 +20,16 @@ export default function Nav() {
       const max = h.scrollHeight - h.clientHeight;
       setProgress(max > 0 ? h.scrollTop / max : 0);
 
-      // At the very bottom, the short contact footer wins.
-      if (max > 0 && max - h.scrollTop < 4) {
+      // The short contact footer sits at the very bottom, so its top can never
+      // reach the line. Light it up over the last stretch of the page.
+      if (max > 0 && max - h.scrollTop < 80) {
         setActive("contact");
         return;
       }
-      // The active section is the last one whose top has scrolled up to just
-      // under the nav. This matches click-to-scroll exactly and tracks cleanly
-      // in both directions (each section "owns" the view from its top onward).
-      const line = 96; // just below the 56px nav
+      // The active section is the last one whose top has crossed the middle of
+      // the viewport. Mid-viewport (not the nav) so even short later sections get
+      // a real active window before the page bottom. Tracks cleanly both ways.
+      const line = window.innerHeight * 0.5;
       let current = "";
       for (const l of LINKS) {
         const el = document.getElementById(l.id);
