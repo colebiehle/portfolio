@@ -31,7 +31,6 @@ export type Tile = {
 export const tiles: Tile[] = [
   {
     id: "bumble",
-    image: "/work/bumble.png",
     title: "Bumble",
     tagline: "A mutual friend makes the first move easier.",
     hook: "Making a friend online means trusting a stranger. Surfacing the mutual friends you already share turns a cold profile into a warm intro.",
@@ -45,7 +44,6 @@ export const tiles: Tile[] = [
   },
   {
     id: "spotify",
-    image: "/work/spotify.png",
     title: "Spotify DJ",
     tagline: "Take the aux from the algorithm.",
     hook: "Your music algorithm is a black box you can't argue with. This DJ opens it up and hands you the dial.",
@@ -59,7 +57,6 @@ export const tiles: Tile[] = [
   },
   {
     id: "analogical-engines",
-    image: "/work/analogical-engines.png",
     title: "Analogical Engines",
     tagline: "Innovation by analogy, not by accident.",
     hook: "History's biggest breakthroughs were analogies borrowed from another field. This AI finds the ones your experts, and off-the-shelf models, would never reach.",
@@ -73,7 +70,6 @@ export const tiles: Tile[] = [
   },
   {
     id: "cozu",
-    image: "/work/cozu.png",
     title: "Cozu",
     tagline: "The knowledge that walks out the door when experts do.",
     hook: "Experts won't document what they know when they fear it'll train their replacement. Cozu makes sharing feel safe, and worth it.",
@@ -86,7 +82,6 @@ export const tiles: Tile[] = [
   },
   {
     id: "zelig",
-    image: "/work/zelig.png",
     title: "Zelig",
     tagline: "Style the runway from your couch.",
     hook: "You can't try clothes on through a screen, so you guess, then send half of it back. Zelig replaces the guesswork with virtual try-on and styling.",

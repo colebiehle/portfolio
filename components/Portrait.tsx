@@ -18,7 +18,8 @@ const DOTS = [
 
 export default function Portrait() {
   const reduce = useReducedMotion();
-  const [hasPhoto, setHasPhoto] = useState(true);
+  // Defaults to the friendly blob. Flip to true (and add /headshot.jpg) for a photo.
+  const [hasPhoto, setHasPhoto] = useState(false);
 
   return (
     <div className="relative aspect-[4/5] max-w-[320px] lg:max-w-none">
