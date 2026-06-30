@@ -9,11 +9,11 @@ import PortraitMotif from "@/components/PortraitMotif";
 // A few dots in the project-accent palette float at the corners for cohesion
 // with the work cards, kept off-center so they never cover the face.
 const DOTS = [
-  { c: "#F4C430", x: "-2.5%", y: "10%" },
-  { c: "#1DB954", x: "97%", y: "22%" },
-  { c: "#8B7CF6", x: "100%", y: "68%" },
-  { c: "#17B8A8", x: "6%", y: "94%" },
-  { c: "#E85C8A", x: "84%", y: "99%" },
+  { c: "#5B9DFF", x: "-2.5%", y: "10%" },
+  { c: "#8FBEFF", x: "97%", y: "22%" },
+  { c: "#5B9DFF", x: "100%", y: "68%" },
+  { c: "#8FBEFF", x: "6%", y: "94%" },
+  { c: "#5B9DFF", x: "84%", y: "99%" },
 ];
 
 export default function Portrait() {

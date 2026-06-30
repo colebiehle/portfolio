@@ -3,17 +3,13 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Portrait from "@/components/Portrait";
 
-// Inline links carry the proof and open in a new tab. Any remaining "#" (e.g.
-// "more awards", with no standalone announcement) renders as accent text only.
+// Inline proof links, opening in a new tab.
 function L({ href, children }: { href: string; children: React.ReactNode }) {
-  if (href === "#") {
-    return <span className="text-accent">{children}</span>;
-  }
-  const external = /^https?:/i.test(href);
   return (
     <a
       href={href}
-      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-accent underline decoration-accent/30 underline-offset-[3px] decoration-1 hover:decoration-accent transition-colors"
     >
       {children}
@@ -104,41 +100,47 @@ export default function About() {
             {...reveal}
             className="font-display font-semibold tracking-tight text-3xl md:text-4xl leading-[1.18] text-ink"
           >
-            I research, code, and iterate fast to design products people{" "}
-            <span className="text-accent">can&rsquo;t live without</span>.
+            I build AI products people{" "}
+            <span className="text-accent">can&rsquo;t imagine working without</span>.
           </motion.h2>
 
           <div className="mt-10 space-y-5 text-base md:text-lg leading-relaxed text-ink/80">
             <motion.p {...reveal}>
-              I&apos;m an interaction designer who builds what I design in code,
-              taking products end to end from research to working, tested
-              interfaces. I prototype quickly with AI, which lets me validate ideas
-              early and iterate on real interactions.
+              I&apos;m an interaction designer who designs and builds AI products in
+              code, taking them from research all the way to a working, tested
+              interface.
             </motion.p>
             <motion.p {...reveal}>
-              I&apos;ve run research for Google, Amazon, and Microsoft through the
-              agency Mindswarms, shaped product and strategy at{" "}
-              <L href="https://www.zelig.com">Zelig</L> through a{" "}
+              I&apos;ve published research on human-AI collaboration in a UCSD{" "}
+              <L href="https://designlab.ucsd.edu">research lab</L>, run studies for
+              Google,{" "}
+              <L href="https://en.wikipedia.org/wiki/Amazon_Halo">Amazon</L>, and
+              Microsoft through the agency Mindswarms, and shaped product and
+              strategy at <L href="https://www.zelig.com">Zelig</L> through a{" "}
               <L href="https://techcrunch.com/2023/11/06/luxury-clothing-virtual-try-on-100m-valuation-e-commerce/">
                 $15M Series A
               </L>
-              , and now design and build Analogical Engines, an AI tool that breaks
-              R&amp;D teams out of fixation. I work across research, engineering,
-              and product, and I&apos;m at my best coordinating the moving parts of
-              a complex problem and keeping a team aligned on what matters most.
+              .
+            </motion.p>
+            <motion.p {...reveal}>
+              Now I design and build{" "}
+              <L href="https://www.analogicalengines.com">Analogical Engines</L>, an
+              AI tool for R&amp;D teams that won{" "}
+              <L href="https://technical.ly/entrepreneurship/analogical-wins-cmu-mcginnis-startup-competition/">
+                CMU&apos;s McGinnis Venture Competition
+              </L>
+              , lead a capstone with{" "}
+              <L href="https://www.99plabs.com">Honda&apos;s 99P Labs</L>, and design
+              AI-native interfaces beyond the chat box for{" "}
+              <L href="https://uiforai.design">UI for AI</L>.
             </motion.p>
             <motion.p
               {...reveal}
-              className="text-ink/80 border-t border-white/[0.06] pt-5 mt-1"
+              className="text-ink border-t border-white/[0.06] pt-5 mt-1 font-semibold"
             >
-              I think the hard part of AI has shifted from the model to the
-              interface: how people direct it, trust it, and stay in control as it
-              takes on more.{" "}
-              <span className="text-ink font-semibold">
-                What I want to build next is the interaction layer that turns
-                frontier models into products people actually understand and rely
-                on.
-              </span>
+              My work is the next paradigm of human-AI interaction: turning frontier
+              models into interfaces people direct with confidence and never want to
+              give back.
             </motion.p>
           </div>
         </div>
