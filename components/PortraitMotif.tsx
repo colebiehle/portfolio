@@ -37,11 +37,13 @@ function pathFrom(pts: [number, number][]) {
 function build(t: number) {
   const pts: [number, number][] = [];
   for (let i = 0; i < N; i++) {
-    const th = (i / N) * Math.PI * 2;
+    // 5 soft points (a star-blob, echoing the "cb" logo mark) that breathe and
+    // slowly drift, with a top point kept roughly up.
+    const th = (i / N) * Math.PI * 2 - Math.PI / 2;
     const r =
       R *
-      (1 + 0.1 * Math.cos(3 * th + t * 0.5) + 0.06 * Math.sin(5 * th - t * 0.4)) *
-      (1 + 0.012 * Math.sin(t * 2 + i * 0.8));
+      (1 + 0.18 * Math.cos(5 * th + t * 0.25) + 0.04 * Math.sin(8 * th - t * 0.2)) *
+      (1 + 0.01 * Math.sin(t * 1.5 + i * 0.7));
     pts.push([CX + r * Math.cos(th), CY + r * Math.sin(th)]);
   }
   return pathFrom(pts);
